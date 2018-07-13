@@ -8,7 +8,7 @@ public class Listeners implements MouseListener, KeyListener, MouseMotionListene
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
-
+        
 	}
 
 	@Override
@@ -52,8 +52,10 @@ public class Listeners implements MouseListener, KeyListener, MouseMotionListene
 	@Override
 	public void mouseMoved(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
 		Panel.mouseX=e.getX();
 		Panel.mouseY=e.getY();
+		
 	}
 
 	@Override
@@ -64,13 +66,13 @@ public class Listeners implements MouseListener, KeyListener, MouseMotionListene
 				Player.up=true;
 		}
 		if(key==KeyEvent.VK_S){
-			Player.up=true;
+			Player.down=true;
 		}
 		if(key==KeyEvent.VK_A){
-			Player.up=true;
+			Player.left=true;
 		}
 		if(key==KeyEvent.VK_D){
-			Player.up=true;
+			Player.right=true;
 		}
 		if(key==KeyEvent.VK_ESCAPE){
 			if(Panel.state==Panel.STATES.PLAY) Panel.state = Panel.STATES.MENUE;
@@ -85,13 +87,13 @@ public class Listeners implements MouseListener, KeyListener, MouseMotionListene
 			Player.up=false;
 		}
 		if(key==KeyEvent.VK_S){
-			Player.up=false;
+			Player.down=false;
 		}
 		if(key==KeyEvent.VK_A){
-			Player.up=false;
+			Player.left=false;
 		}
 		if(key==KeyEvent.VK_D){
-			Player.up=false;
+			Player.right=false;
 		}
 	}
 

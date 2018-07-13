@@ -42,8 +42,16 @@ public class Panel extends JPanel implements ActionListener {
 	Timer mainTimer = new Timer (30, this);
 	Back back = new Back();
 	Player player=new Player();
+	Gryt gryt=new Gryt();
 	Menue menue = new Menue();
-
+	Smert smert=new Smert();
+	Palm palm=new Palm();
+	Sklep sklep=new Sklep();
+	Smert2 smert2=new Smert2();
+	Smert3 smert3=new Smert3();
+	Zombicut zombicut=new Zombicut();
+	Oak oak = new Oak();
+	Tower tower=new Tower();
 		 public Panel() {
 			 super();
 			 setFocusable(true);
@@ -158,10 +166,21 @@ public class Panel extends JPanel implements ActionListener {
 		private void gameRender() {
 			 back.draw(g);
 			 player.draw(g);
+			 gryt.draw(g);
+			 smert.draw(g);
+			 smert2.draw(g);
+			 smert3.draw(g);
+			 palm.draw(g);
+			 sklep.draw(g);
+			 zombicut.draw(g);
+			 oak.draw(g);
+			 tower.draw(g);
 		}
 	
 		private void gameUpdate() {
 			player.update();
+		
+			
 			
 		}
 		private void gameDraw() {

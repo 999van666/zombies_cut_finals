@@ -15,14 +15,14 @@ public class Player {
     public static boolean left;
     public static boolean right;
 
-    Image img = new ImageIcon("").getImage();
+    Image img = new ImageIcon("animations/anim_woodcutter_stand/anim_woodcutter_stand.png").getImage();
 
     public Player(){
-x=400;
-    y=500;
+x=1000;
+    y=300;
     w=142;
     h=229;
-    speed=5;
+    speed=2;
     up=false;
         down=false;
         left=false;
@@ -33,7 +33,7 @@ x=400;
     public double getW() {return w;}
     public double getH() {return h;}
     public void update(){
-        if (up && y>20){
+        if (up && y>10){
             y-=speed;
         }
         if (down && y<Panel.HEIGHT-h){
