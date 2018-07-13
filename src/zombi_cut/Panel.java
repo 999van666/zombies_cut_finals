@@ -7,13 +7,20 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
+import javazoom.jl.player.AudioDevice;
+import javazoom.jl.player.JavaSoundAudioDevice;
+import javazoom.jl.player.advanced.AdvancedPlayer;
+
 public class Panel extends JPanel implements ActionListener {
     //размеры панели
+	
 	public static int WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
 	public static int HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
 	//координаты мыши
@@ -42,8 +49,17 @@ public class Panel extends JPanel implements ActionListener {
 	Timer mainTimer = new Timer (30, this);
 	Back back = new Back();
 	Player player=new Player();
+	Gryt gryt=new Gryt();
 	Menue menue = new Menue();
-
+	Smert smert=new Smert();
+	Palm palm=new Palm();
+	Sklep sklep=new Sklep();
+	Smert2 smert2=new Smert2();
+	Smert3 smert3=new Smert3();
+	Zombicut zombicut=new Zombicut();
+	Oak oak = new Oak();
+	Tower tower=new Tower();
+	Mp3 mp3=new Mp3();
 		 public Panel() {
 			 super();
 			 setFocusable(true);
@@ -94,6 +110,7 @@ public class Panel extends JPanel implements ActionListener {
 		    	 gameUpdate();
 		    	 gameRender();
 		    	 gameDraw();
+		    
 		     }
 		 }
 
@@ -126,7 +143,8 @@ public class Panel extends JPanel implements ActionListener {
                 }
                 if(i==3){
                     if(Menue.click){
-                        aud=true;
+                        
+                    	aud=true;
 
                     }
                 }
@@ -158,10 +176,23 @@ public class Panel extends JPanel implements ActionListener {
 		private void gameRender() {
 			 back.draw(g);
 			 player.draw(g);
+			 gryt.draw(g);
+			 smert.draw(g);
+			 smert2.draw(g);
+			 smert3.draw(g);
+			 palm.draw(g);
+			 sklep.draw(g);
+			 zombicut.draw(g);
+			 oak.draw(g);
+			 tower.draw(g);
+			 
 		}
 	
 		private void gameUpdate() {
 			player.update();
+			
+		
+			
 			
 		}
 		private void gameDraw() {
