@@ -7,20 +7,16 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.io.FileInputStream;
-import java.io.InputStream;
+
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
 import javax.swing.Timer;
 
-import javazoom.jl.player.AudioDevice;
-import javazoom.jl.player.JavaSoundAudioDevice;
-import javazoom.jl.player.advanced.AdvancedPlayer;
 
 public class Panel extends JPanel implements ActionListener {
     //размеры панели
-	
+
 	public static int WIDTH = Toolkit.getDefaultToolkit().getScreenSize().width;
 	public static int HEIGHT = Toolkit.getDefaultToolkit().getScreenSize().height;
 	//координаты мыши
@@ -34,7 +30,7 @@ public class Panel extends JPanel implements ActionListener {
     public static boolean easy=true;
     public static boolean norm=false;
     public static boolean hard=false;
-    public static boolean aud=true;
+    public static boolean explay=true;
     public static boolean control=true;
 
 
@@ -59,7 +55,7 @@ public class Panel extends JPanel implements ActionListener {
 	Zombicut zombicut=new Zombicut();
 	Oak oak = new Oak();
 	Tower tower=new Tower();
-	Mp3 mp3=new Mp3();
+
 		 public Panel() {
 			 super();
 			 setFocusable(true);
@@ -143,14 +139,15 @@ public class Panel extends JPanel implements ActionListener {
                 }
                 if(i==3){
                     if(Menue.click){
-                        
-                    	aud=true;
+
+						explay=true;
 
                     }
                 }
                 if(i==4){
                     if(Menue.click){
-                        aud=false;
+						explay=false;
+
 
                     }
                 }

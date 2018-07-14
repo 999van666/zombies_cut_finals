@@ -6,7 +6,12 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="JavaSE-1.8" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="jl1.0.1" level="project" />
+    <orderEntry type="library" name="jl1.0.11" level="project" />
+    <orderEntry type="library" name="JavadocUpdaterTool" level="project" />
+    <orderEntry type="library" name="customizer" level="project" />
+    <orderEntry type="library" name="jffmpeg-1.1.0" level="project" />
   </component>
 </module>

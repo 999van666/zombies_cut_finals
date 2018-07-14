@@ -12,8 +12,11 @@ import javazoom.jl.player.AudioDevice;
 import javazoom.jl.player.JavaSoundAudioDevice;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 
+
 public class Window {
 
+	public static AdvancedPlayer explay;
+	public static String muss = "aud/aud.mp3";
 
 		public static void main (String[] args) {
 			JFrame f = new JFrame ("Java zombies_cut");
@@ -26,11 +29,14 @@ public class Window {
 			f.setResizable(false);
 			f.setLocationRelativeTo(null);
 	        f.setVisible(true);
-	        
-	       
-		
+			try{
+				InputStream potok = new FileInputStream(muss);
+				AudioDevice auDev = new JavaSoundAudioDevice();
+				explay = new AdvancedPlayer(potok,auDev);
+				explay.play();
+				explay.stop();
 
-	}
-		
-
+			}catch(Exception err){err.printStackTrace();}
+		}
 }
+	       

@@ -60,8 +60,8 @@ public class SettMenue {
         if(Panel.easy)g.drawString("Легко",900,250);
         if(Panel.norm)g.drawString("Средне",900,250);
         if(Panel.hard)g.drawString("Невыносимо",1000,250);
-        if(Panel.aud)g.drawImage(new ImageIcon("menu/on.gif").getImage(), 900,350,null);
-        if(!Panel.aud)g.drawImage(new ImageIcon("menu/off.png").getImage(), 900,350,null);
+        if(Panel.explay)g.drawImage(new ImageIcon("menu/on.gif").getImage(), 900,350,null);
+        if(!Panel.explay)g.drawImage(new ImageIcon("menu/off.png").getImage(), 900,350,null);
         if(Panel.control)g.drawString("стандарт",500,500);
         if(!Panel.control)g.drawString("пользовательское",500,500);
     }
