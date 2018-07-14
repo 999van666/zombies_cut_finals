@@ -18,7 +18,7 @@ button3.draw(g);
 public void moveButt(Menue.ButtMenue e) {
 if (  Panel.mouseX>e.getX() && Panel.mouseX<e.getX()+e.getW()  &&
 		Panel.mouseY>e.getY() && Panel.mouseY<e.getY()+e.getH()) {
-	e.s="menu/ред.png";
+	e.s="menu/кнопка.png";
 	if (e.equals(button1)) {e.f="game";
 		if(Menue.click){
 			Panel.state=Panel.STATES.PLAY;

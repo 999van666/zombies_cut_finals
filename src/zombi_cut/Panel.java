@@ -26,7 +26,9 @@ public class Panel extends JPanel implements ActionListener {
 	//активные страницы меню
 	public static boolean buttmenue =true;
 	public static boolean settmenue =false;
-
+	public static boolean controlmenue=false;
+	
+	public static ControlMenue c_menue;
     public static boolean easy=true;
     public static boolean norm=false;
     public static boolean hard=false;
@@ -36,6 +38,7 @@ public class Panel extends JPanel implements ActionListener {
 
 	public static enum STATES{MENUE,PLAY}//обЪявляем перечесление
 	public static STATES state = STATES.MENUE;//изначальная работа с вкл. меню
+
 
 	private BufferedImage image;
 	private Graphics2D g;
@@ -48,7 +51,7 @@ public class Panel extends JPanel implements ActionListener {
 	Gryt gryt=new Gryt();
 	Menue menue = new Menue();
 	Smert smert=new Smert();
-	Palm palm=new Palm();
+	Palm palm= new Palm();
 	Sklep sklep=new Sklep();
 	Smert2 smert2=new Smert2();
 	Smert3 smert3=new Smert3();
@@ -62,7 +65,7 @@ public class Panel extends JPanel implements ActionListener {
 			 requestFocus();
 			 mainTimer.start();
 
-
+             c_menue = new ControlMenue();
 			 image = new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
 			 g = (Graphics2D) image.getGraphics();
 
@@ -75,6 +78,7 @@ public class Panel extends JPanel implements ActionListener {
 			 buttons.add(new SettMenue(600,190,100,37,"","выкл"));
 
 			 buttons.add(new SettMenue(300,345,100,37,"","стандарт"));
+			 buttons.add(new SettMenue(600,345,100,37,"","пользоват"));
 
 			 buttons.add(new SettMenue(970,570,100,37,"","назад"));
 
@@ -98,7 +102,14 @@ public class Panel extends JPanel implements ActionListener {
 				 if(settmenue){
                  moveSettButt();
 				 }
-
+                 if(controlmenue) {
+                	 c_menue.draw(g);
+                	 c_menue.moveContr(c_menue.button_up);
+                	 c_menue.moveContr(c_menue.button_d);
+                	 c_menue.moveContr(c_menue.button_l);
+                	 c_menue.moveContr(c_menue.button_r);
+                	 c_menue.moveContr(c_menue.button_k);
+                 }
                  gameDraw();
 			 }
 
@@ -115,7 +126,7 @@ public class Panel extends JPanel implements ActionListener {
 			buttons.get(i).draw(g);
 			if (Panel.mouseX > buttons.get(i).getX() && Panel.mouseX < buttons.get(i).getX() + buttons.get(i).getW() &&
 					Panel.mouseY > buttons.get(i).getY() && Panel.mouseY < buttons.get(i).getY() + buttons.get(i).getH()) {
-			buttons.get(i).s="menu/черная.png";
+			buttons.get(i).s="c";
 			if(i==0){
 			    if(Menue.click){
 			        easy=true;
@@ -154,11 +165,24 @@ public class Panel extends JPanel implements ActionListener {
                 if(i==5){
                     if(Menue.click){
                         control=true;
+                      c_menue.button_up.f="вверх";
+                      c_menue.button_d.f="вниз";
+                      c_menue.button_l.f="влево";
+                      c_menue.button_r.f="вправо";
 
+						c_menue.button_up.ch_code=38;
+						c_menue.button_d.ch_code=40;
+						c_menue.button_l.ch_code=37;
+						c_menue.button_r.ch_code=32;
                     }
                 }
-
                 if(i==6){
+                    if(Menue.click){
+                    	control=false;
+                    	settmenue=false;
+                    	controlmenue=true;
+                    } }
+                if(i==7){
                     if(Menue.click){
                         settmenue=false;
                         buttmenue=true;

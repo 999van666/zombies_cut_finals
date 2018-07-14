@@ -34,7 +34,7 @@ public class Window {
 				AudioDevice auDev = new JavaSoundAudioDevice();
 				explay = new AdvancedPlayer(potok,auDev);
 				explay.play();
-				explay.stop();
+
 
 			}catch(Exception err){err.printStackTrace();}
 		}
